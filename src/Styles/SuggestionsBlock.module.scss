@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template: repeat(3, auto) / repeat(4, auto);
+  grid-gap: 10px;
+  button {
+    width: 150px;
+    padding: 1.25rem 1.5rem;
+    background-color: #4869B2;
+    color: white;
+    border: none;
+    border-radius: 50px;
+  }
+  button:hover {
+    background-color: #8AA6E5;
+  }
+}

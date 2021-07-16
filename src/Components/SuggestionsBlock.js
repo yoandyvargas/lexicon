@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import Anime from 'react-anime'
+import styles from '../Styles/SuggestionsBlock.module.scss'
 const wordList = require('../Data/suggestions.json')
 //maybe find a more interesting set of words to import later.
 export default function SuggestionsBlock() {
@@ -17,18 +19,26 @@ export default function SuggestionsBlock() {
 
   useEffect(() => {
     suggestionsData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  let animeProps = {
+    opacity: [0, 1],
+    translateY: [-64, 0],
+    delay: (el, index) => index * 100
+  };
+
   return (
-    <div>
-      {
-        wordBlock.map((item, index) => {
-          return (
-            <button key={index}>{item}</button>
-          )
-        })
-      }
-      <button onClick={suggestionsData}>New Set of Words</button>
+    <div className={styles.container}>
+      <Anime {...animeProps}>
+        {
+          wordBlock.map((item, index) => {
+            return (
+              <button key={index}>{item}</button>
+            )
+          })
+        }
+      </Anime>
     </div>
   )
 }
