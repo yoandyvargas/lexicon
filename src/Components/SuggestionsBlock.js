@@ -29,16 +29,22 @@ export default function SuggestionsBlock({ fetchWordData }) {
   };
 
   return (
-    <div className={styles.container}>
-      <Anime {...animeProps}>
-        {
-          wordBlock.map((item, index) => {
-            return (
-              <button key={index} onClick={() => fetchWordData(`${item}`)}>{item}</button>
-            )
-          })
-        }
-      </Anime>
-    </div>
+    <section>
+      <div className={styles.section__header}>
+        <h2>Fancy words</h2>
+        <button>refresh</button>
+      </div>
+      <div className={styles.grid}>
+        <Anime {...animeProps}>
+          {
+            wordBlock.map((item, index) => {
+              return (
+                <button key={index} onClick={() => fetchWordData(`${item}`)}>{item}</button>
+              )
+            })
+          }
+        </Anime>
+      </div>
+    </section>
   )
 }

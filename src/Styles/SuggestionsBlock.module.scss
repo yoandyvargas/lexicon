@@ -1,4 +1,10 @@
-.container {
+.section__header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.grid {
   display: grid;
   grid-template: repeat(3, auto) / repeat(4, auto);
   grid-gap: 10px;
