@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Hint } from 'react-autocomplete-hint'
+import styles from '../Styles/SearchForm.module.scss'
 const suggestions = require('../Data/suggestions.json')
 
 export default function SearchForm({ fetchWordData }) {
@@ -15,7 +16,7 @@ export default function SearchForm({ fetchWordData }) {
   let autocompleteOptions = Object.keys(suggestions)
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <Hint options={autocompleteOptions} allowTabFill='true'>
         <input
           type='text'

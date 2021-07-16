@@ -3,7 +3,7 @@ import Anime from 'react-anime'
 import styles from '../Styles/SuggestionsBlock.module.scss'
 const wordList = require('../Data/suggestions.json')
 //maybe find a more interesting set of words to import later.
-export default function SuggestionsBlock() {
+export default function SuggestionsBlock({ fetchWordData }) {
 
   const [wordBlock, setWordBlock] = useState([]);
 
@@ -34,7 +34,7 @@ export default function SuggestionsBlock() {
         {
           wordBlock.map((item, index) => {
             return (
-              <button key={index}>{item}</button>
+              <button key={index} onClick={() => fetchWordData(`${item}`)}>{item}</button>
             )
           })
         }
