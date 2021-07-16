@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import SearchForm from './Components/SearchForm'
+const Owlbot = require('owlbot-js');
+const client = Owlbot("cc79e2f4add1dac1bdd8949cbfb560bd3bc12ba5");
+
+client.define('owl').then(function (result) {
+  console.log(result);
+});
 
 function App() {
+  //search form with autocomplete
+  //random suggest word bubbles that are clickable to define
+  //results section that displays word, pronunciation, etc
+  //
+  const fetchWordData = value => {
+    client.define(value)
+      .then((res) => {
+        console.log(res)
+      })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchForm fetchWordData={fetchWordData} />
     </div>
   );
 }
