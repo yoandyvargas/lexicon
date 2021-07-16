@@ -9,7 +9,6 @@ const client = Owlbot("cc79e2f4add1dac1bdd8949cbfb560bd3bc12ba5");
 
 function App() {
   //results section that displays word, pronunciation, etc
-  //add a refresh suggestions button
   //keep a history of previously searched words.
   //create a set of themes and maybe randomly pick one on load and add a theme picker
   //look into react transition

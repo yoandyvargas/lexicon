@@ -1,7 +1,12 @@
 .section__header{
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 0rem 0rem 1rem;
+  button {
+    background: none;
+    border: none;
+    font-size: 32px;
+  }
 }
 
 .grid {

@@ -32,7 +32,7 @@ export default function SuggestionsBlock({ fetchWordData }) {
     <section>
       <div className={styles.section__header}>
         <h2>Fancy words</h2>
-        <button>refresh</button>
+        <button onClick={suggestionsData}>🔄</button>
       </div>
       <div className={styles.grid}>
         <Anime {...animeProps}>
