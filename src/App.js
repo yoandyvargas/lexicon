@@ -13,14 +13,14 @@ function App() {
   //create a set of themes and maybe randomly pick one on load and add a theme picker
   //look into react transition
 
-  const [currentWord, setWord] = useState({ "word": "", "pronunciation": "", "definitions": "" })
+  const [currentWord, setWord] = useState({ "word": "Yoandy", "pronunciation": "(YO-AHN-DEE)", "definitions": "" })
+  const [isLoading, setIsLoading] = useState(true)
 
   const fetchWordData = value => {
-    console.log(value)
     client.define(value)
-      .then((res) => {
-        setWord(res)
-      })
+      .then((res) => { setWord(res)})
+      .then(setIsLoading(false));
+      console.log(currentWord)
   }
 
   return (
