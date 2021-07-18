@@ -13,3 +13,17 @@ h2,
 p {
   color: white;
 }
+
+.themeToggle {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+}
+
+body[data-theme="light"] {
+  --main-bg-color: #f7f7f7;
+}
+
+body[data-theme="dark"] {
+  --main-bg-color: #121212;
+}
