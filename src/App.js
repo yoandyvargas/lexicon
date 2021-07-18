@@ -8,10 +8,9 @@ const Owlbot = require('owlbot-js');
 const client = Owlbot("cc79e2f4add1dac1bdd8949cbfb560bd3bc12ba5");
 
 function App() {
-  //results section that displays word, pronunciation, etc
-  //keep a history of previously searched words.
   //create a set of themes and maybe randomly pick one on load and add a theme picker
   //look into react transition
+  //find or create a list of more unique words for the "fancy" generator. There are 12 words, minimum req 240 variations. Verify they are on owlbot as well.
 
   const [currentWord, setWord] = useState({})
   const [isLoading, setIsLoading] = useState(true)
@@ -20,7 +19,6 @@ function App() {
     client.define(value)
       .then((res) => { setWord(res)})
       .then(setIsLoading(false));
-      console.log(currentWord)
   }
 
   useEffect(() => {
