@@ -1,5 +1,4 @@
 import styles from '../Styles/Results.module.scss'
-import { useState } from 'react'
 
 export default function Results({ word, pronunciation, definitions }) {
   //need to add conditionals for image_url and emoji

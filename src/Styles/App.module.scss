@@ -1,29 +1,33 @@
 .container {
-  text-align: center;
-  background-color: var(--main-bg-color);
-  height: 100vh;
-  place-items: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-bg-color);
+  padding: 2rem;
 }
 
-.container h1,
+h1,
 h2,
-p {
-  color: white;
-}
-
-.themeToggle {
-  position: absolute;
-  top: 32px;
-  right: 32px;
+h3,
+h4,
+h5,
+li p {
+  color: var(--main-text-color);
 }
 
 body[data-theme="light"] {
   --main-bg-color: #f7f7f7;
+  --main-text-color: black;
+  --secondary-text-color: white;
+  --alt-text-color: #505050;
+  --main-button-color: #4869b2;
+  --main-accent-color: #1d1d1d;
 }
 
 body[data-theme="dark"] {
   --main-bg-color: #121212;
+  --main-text-color: #ccc;
+  --secondary-text-color: black;
+  --alt-text-color: #505050;
+  --main-button-color: #4869b2;
+  --main-accent-color: #f7f7f7;
 }

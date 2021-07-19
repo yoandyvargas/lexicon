@@ -30,7 +30,7 @@ export default function SuggestionsBlock({ fetchWordData }) {
 
   return (
     <section>
-      <div className={styles.section__header}>
+      <div className={styles.container}>
         <h2>Fancy words</h2>
         <button onClick={suggestionsData}>🔄</button>
       </div>
