@@ -1,16 +1,9 @@
-/*
-.darkmodetoggle {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-}
-*/
-
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   h1 {
     font-size: 4rem;
+    line-height: 2;
   }
 }

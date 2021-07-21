@@ -1,7 +1,6 @@
 import styles from '../Styles/Results.module.scss'
 
 export default function Results({ word, pronunciation, definitions }) {
-  //need to add conditionals for image_url and emoji
 
   return (
     <div className={styles.container}>
@@ -13,10 +12,15 @@ export default function Results({ word, pronunciation, definitions }) {
         return (
           <div>
             <ul>
-              <li>{item.definition}</li>
-              <li><strong>Example:</strong> {item.example}</li>
-              <li>{item.image_url}</li>
+              <li><p>{item.definition}</p></li>
+              {item.example &&
+              <li>
+                <strong>Example: &nbsp;</strong>
+                <p dangerouslySetInnerHTML={{__html: item.example}}></p>
+              </li>
+              } 
             </ul>
+            {item.image_url && <img src={item.image_url} alt='describes use of definition' />}
           </div>
         )
         })

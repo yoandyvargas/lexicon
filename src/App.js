@@ -12,9 +12,7 @@ function App() {
   //find or create a list of more unique words for the "fancy" generator. There are 12 words, minimum req 240 variations. Verify they are on owlbot as well.
   //deploy to netlify and hide token
   // make responsive and shiny polished – play with anime js and stuff!
-
-
-
+  //make sure theme is auto selected
 
   const [currentWord, setWord] = useState({})
   const [isLoading, setIsLoading] = useState(true)
@@ -40,6 +38,9 @@ function App() {
       <SuggestionsBlock
         fetchWordData={fetchWordData}
       />
+      <footer>
+      
+      </footer>
     </div>
   );
 }
