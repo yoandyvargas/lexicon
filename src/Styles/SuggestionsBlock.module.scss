@@ -1,12 +1,16 @@
 .container {
   display: flex;
   justify-content: space-between;
-  margin: 1.5rem 0;
+  align-items: center;
+  margin: 1rem 0;
   width: 100%;
   button {
     background: none;
     border: none;
     font-size: 32px;
+  }
+  h2 {
+    margin: 0;
   }
 }
 
@@ -20,7 +24,7 @@
   button {
     width: 150px;
     padding: 1.25rem 1.5rem;
-    background-color: #4869b2;
+    background-color: var(--main-button-color);
     color: white;
     border: none;
     border-radius: 50px;
@@ -29,7 +33,7 @@
     box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.25);
   }
   button:hover {
-    background-color: #8aa6e5;
+    //background: var(--main-button-color);
     transform: scale(1.2);
   }
 }
