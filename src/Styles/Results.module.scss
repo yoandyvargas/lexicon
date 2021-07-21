@@ -6,7 +6,10 @@
   padding: 2rem;
   border-radius: 25px;
   width: 100%;
-  min-height: 250px;
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   hr {
     width: 100%;
   }

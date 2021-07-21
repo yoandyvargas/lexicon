@@ -2,6 +2,7 @@ import Header from './Components/Header'
 import SearchForm from './Components/SearchForm'
 import Results from './Components/Results'
 import SuggestionsBlock from './Components/SuggestionsBlock'
+import History from './Components/History'
 import { useState, useEffect } from 'react'
 import styles from './Styles/App.module.scss'
 const Owlbot = require('owlbot-js');
@@ -37,6 +38,10 @@ function App() {
       {isLoading ? <h2>Loading...</h2> : ( <Results word={currentWord.word} pronunciation={currentWord.pronunciation} definitions={currentWord.definitions} /> )}
       <SuggestionsBlock
         fetchWordData={fetchWordData}
+      />
+      <History 
+      SearchedWords={currentWord.word}
+      fetchWordData={fetchWordData}
       />
       <footer>
       

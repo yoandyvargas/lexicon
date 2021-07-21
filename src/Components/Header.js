@@ -24,7 +24,7 @@ export default function Header() {
   
   return (
     <header className={styles.container}>
-      <h1>Word 📖</h1>
+      <h1>Lexicon 📖</h1>
       <ThemeToggler />
     </header>
   )
