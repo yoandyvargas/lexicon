@@ -8,6 +8,11 @@ function ThemeToggler() {
   const nextTheme = theme === 'light' ? 'dark' : 'light';
 
     useEffect(() => {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme('dark')
+      } else {
+        setTheme('light')
+      }
       document.body.dataset.theme = theme
     }, [theme])
 

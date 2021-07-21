@@ -9,13 +9,13 @@ const Owlbot = require('owlbot-js');
 const client = Owlbot("cc79e2f4add1dac1bdd8949cbfb560bd3bc12ba5");
 
 function App() {
-  //look into react transition
-  //find or create a list of more unique words for the "fancy" generator. There are 12 words, minimum req 240 variations. Verify they are on owlbot as well.
-  //deploy to netlify and hide token
-  // make responsive and shiny polished – play with anime js and stuff!
-  //make sure theme is auto selected
-  //maybe autoprefixer CSS?
-  //look into scroll bar fix?
+  //Ask people why React Anime is not re rendering and stop wasting time on this.
+  //find or create a list of more unique words for the "fancy" generator. There are 12 words, minimum req 240 variations. Verify they are on owlbot as well. Priority 2
+  //deploy to netlify and hide token Priority 1
+  //maybe autoprefixer CSS? Priority 3
+  //look into scroll bar fix? Priority 3
+  //Add Footer Priority 1
+  //Finalize colors and themes Priority 3
 
   const [currentWord, setWord] = useState({})
   const [isLoading, setIsLoading] = useState(true)
