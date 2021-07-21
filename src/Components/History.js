@@ -7,11 +7,10 @@ export default function History ({ SearchedWords, fetchWordData }) {
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
-    console.log(SearchedWords)
-    if(!searchHistory.includes(SearchedWords)) {
+    if(!searchHistory.includes(SearchedWords) && SearchedWords !== "lexicon" && SearchedWords !== undefined) {
       setHistory([...searchHistory, SearchedWords])
-    }
       setLoading(false)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [SearchedWords])
 

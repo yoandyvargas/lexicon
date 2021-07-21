@@ -14,6 +14,8 @@ function App() {
   //deploy to netlify and hide token
   // make responsive and shiny polished – play with anime js and stuff!
   //make sure theme is auto selected
+  //maybe autoprefixer CSS?
+  //look into scroll bar fix?
 
   const [currentWord, setWord] = useState({})
   const [isLoading, setIsLoading] = useState(true)
