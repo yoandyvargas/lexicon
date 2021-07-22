@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  background-color: var(--main-accent-color);
-  padding: 2rem;
+  background-color: var(--secondary-bg-color);
+  padding: 1rem 2rem;
   border-radius: 25px;
   width: 100%;
   min-height: 400px;
   max-height: 400px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   hr {
@@ -18,7 +18,7 @@
   h3,
   li,
   p {
-    color: var(--secondary-text-color);
+    color: var(--main-text-color);
   }
   h2 {
     font-size: 2rem;
@@ -44,4 +44,17 @@
     border-left: solid 5px var(--main-button-color);
     padding-left: 20px;
   }
+}
+
+.container::-webkit-scrollbar {
+  width: 20px;
+}
+.container::-webkit-scrollbar-thumb {
+  border-radius: 0px 25px 25px 0px;
+  background: var(--main-button-color);
+}
+
+.container::-webkit-scrollbar-track {
+  border-radius: 0px 25px 25px 0px;
+  background: rgba(0, 0, 0, 0.15);
 }

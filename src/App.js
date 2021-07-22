@@ -13,6 +13,7 @@ function App() {
   //find or create a list of more unique words for the "fancy" generator. There are 12 words, minimum req 240 variations. Verify they are on owlbot as well. Priority 2
   //look into scroll bar fix? Priority 3
   //Remove owlbot token?
+  //Add small transitions or animations to buttons?
 
   const [currentWord, setWord] = useState({})
   const [isLoading, setIsLoading] = useState(true)
