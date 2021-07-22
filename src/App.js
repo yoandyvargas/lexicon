@@ -12,11 +12,12 @@ function App() {
   //Ask people why React Anime is not re rendering and stop wasting time on this.
   //find or create a list of more unique words for the "fancy" generator. There are 12 words, minimum req 240 variations. Verify they are on owlbot as well. Priority 2
   //look into scroll bar fix? Priority 3
+  //Remove owlbot token?
 
   const [currentWord, setWord] = useState({})
   const [isLoading, setIsLoading] = useState(true)
 
-  const colorOptions = ['green', 'red', 'blue', 'yellow']
+  const colorOptions = ['#4869b2']
 
   const fetchWordData = value => {
     client.define(value)
@@ -30,7 +31,7 @@ function App() {
 
   useEffect(() => {
     fetchWordData('lexicon')
-    //randomizeTheme(colorOptions[Math.floor(Math.random() * 4)])
+    randomizeTheme(colorOptions[Math.floor(Math.random() * 1)])
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
