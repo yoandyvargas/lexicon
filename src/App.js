@@ -9,16 +9,9 @@ const Owlbot = require('owlbot-js');
 const client = Owlbot("cc79e2f4add1dac1bdd8949cbfb560bd3bc12ba5");
 
 function App() {
-  //Ask people why React Anime is not re rendering and stop wasting time on this.
-  //find or create a list of more unique words for the "fancy" generator. There are 12 words, minimum req 240 variations. Verify they are on owlbot as well. Priority 2
-  //look into scroll bar fix? Priority 3
-  //Remove owlbot token?
-  //Add small transitions or animations to buttons?
 
   const [currentWord, setWord] = useState({})
   const [isLoading, setIsLoading] = useState(true)
-
-  const colorOptions = ['#4869b2']
 
   const fetchWordData = value => {
     client.define(value)
@@ -26,23 +19,18 @@ function App() {
       .then(setIsLoading(false));
   }
 
-  const randomizeTheme = color => {
-    document.body.style.setProperty('--main-button-color', color)
-  }
-
   useEffect(() => {
     fetchWordData('lexicon')
-    randomizeTheme(colorOptions[Math.floor(Math.random() * 1)])
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <div className={styles.container}>
+    <div className={styles.app}>
       <Header />
       <SearchForm
         fetchWordData={fetchWordData}
       />
-      {isLoading ? <h2>Loading...</h2> : ( <Results word={currentWord.word} pronunciation={currentWord.pronunciation} definitions={currentWord.definitions} /> )}
+      {isLoading ? <h1>Loading...</h1> : ( <Results word={currentWord.word} pronunciation={currentWord.pronunciation} definitions={currentWord.definitions} /> )}
       <SuggestionsBlock
         fetchWordData={fetchWordData}
       />

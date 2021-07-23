@@ -1,18 +1,17 @@
 import { useState, useEffect } from 'react'
 import Anime from 'react-anime'
 import styles from '../Styles/SuggestionsBlock.module.scss'
-const wordList = require('../Data/suggestions.json')
-//maybe find a more interesting set of words to import later.
+const suggestions = require('../Data/suggestions.json')
 export default function SuggestionsBlock({ fetchWordData }) {
 
   const [wordBlock, setWordBlock] = useState([]);
 
-  let suggestWords = Object.keys(wordList)
+  let suggestWords = Object.keys(suggestions)
   let updateArray = []
 
   const suggestionsData = () => {
     for (let i = 0; i < 12; i++) {
-      updateArray.push(suggestWords[Math.floor(Math.random() * 3000)])
+      updateArray.push(suggestWords[Math.floor(Math.random() * 71)])
     }
     setWordBlock(updateArray)
   }
@@ -31,14 +30,14 @@ export default function SuggestionsBlock({ fetchWordData }) {
   return (
     
     <section>
-      <div className={styles.container}>
+      <div className={styles.suggestions__info}>
         <h2>Suggested words</h2>
-        <button onClick={suggestionsData}>🔄</button>
+        <button onClick={suggestionsData}>Shuffle</button>
       </div>
-      <div className={styles.grid}>
+      <div className={styles.suggestions__grid}>
         <Anime {...animeProps}>
           {
-            wordBlock.map((item, index) => <button key={index} onClick={() => fetchWordData(`${item}`)}>{item}</button>)
+            wordBlock.map((item, index) => <button key={item} onClick={() => fetchWordData(`${item}`)}>{item}</button>)
           }
         </Anime>
       </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Hint } from 'react-autocomplete-hint'
 import styles from '../Styles/SearchForm.module.scss'
-const suggestions = require('../Data/suggestions.json')
+const hints = require('../Data/hints.json')
 
 export default function SearchForm({ fetchWordData }) {
 
@@ -13,7 +13,7 @@ export default function SearchForm({ fetchWordData }) {
     fetchWordData(value)
   }
 
-  let autocompleteOptions = Object.keys(suggestions)
+  let autocompleteOptions = Object.keys(hints)
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>

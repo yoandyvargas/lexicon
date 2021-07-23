@@ -1,54 +1,63 @@
-.container {
+.suggestions__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
   width: 100%;
   button {
-    background: none;
+    background: var(--secondary-bg-color);
+    color: var(--main-text-color);
+    padding: 1rem 1.25rem;
+    border-radius: 50px;
     border: none;
-    font-size: 32px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  button:hover {
+    background: var(--main-text-color);
+    color: var(--secondary-bg-color);
   }
   h2 {
     margin: 0;
   }
 }
 
-.grid {
-  display: grid;
+.suggestions__grid {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  grid-template: repeat(3, auto) / repeat(4, auto);
-  grid-gap: 10px;
   width: 100%;
   margin: 0 auto;
   button {
-    width: 150px;
+    width: 180px;
     padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    margin: 0.5rem 0;
     background-color: var(--main-button-color);
     color: white;
     border: none;
     border-radius: 50px;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     font-weight: bold;
-    //box-shadow: 2px 1px 5px rgba(0, 0, 0, 0.25);
   }
   button:hover {
-    //background: var(--main-button-color);
-    transform: scale(1.2);
+    background: var(--secondary-button-color);
   }
 }
 
 @media screen and (max-width: 700px) {
-  .grid {
-    padding: 0rem;
-    grid-template: repeat(4, auto) / repeat(3, minmax(150px, 25%));
+  .suggestions__grid {
+    button {
+      width: 150px;
+    }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .grid {
-    padding: 0rem;
-    justify-content: space-between;
-    grid-template: repeat(5, auto) / repeat(2, minmax(150px, 25%));
+  .suggestions__grid {
+    button {
+      width: 130px;
+    }
   }
 }

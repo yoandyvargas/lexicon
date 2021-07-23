@@ -4,13 +4,17 @@
   width: 100%;
   margin: 1rem 0;
   box-sizing: border-box;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   button {
     position: absolute;
-    right: 15px;
+    right: 10px;
     background: none;
     border: none;
     top: 25%;
     font-size: 24px;
+    cursor: pointer;
+  }
+  button:hover {
   }
   input[type="text"] {
     width: 100%;
@@ -20,6 +24,7 @@
     border: none;
     background-color: var(--secondary-bg-color);
     color: var(--main-text-color);
+    transition: all 0.5s ease-in-out;
   }
   ::placeholder {
     color: var(--main-text-color);

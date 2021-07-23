@@ -31,7 +31,7 @@ function ThemeToggler() {
 export default function Header() {
   
   return (
-    <header className={styles.container}>
+    <header className={styles.header}>
       <h1>Lexicon 📖</h1>
       <ThemeToggler />
     </header>

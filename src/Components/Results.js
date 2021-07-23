@@ -10,7 +10,7 @@ export default function Results({ word, pronunciation, definitions }) {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.results}>
       <Anime {...animeProps}>
       <h2>{word}</h2>
       <h3>{pronunciation}</h3>
@@ -18,7 +18,7 @@ export default function Results({ word, pronunciation, definitions }) {
       {
         definitions && definitions.map((item) => {
         return (
-          <div key={item} className={styles.info}>
+          <div key={item} className={styles.results__info}>
             <ul>
               <li><em>{item.type}</em></li>
               <li>{item.definition}</li>
