@@ -18,9 +18,10 @@ export default function Results({ word, pronunciation, definitions }) {
       {
         definitions && definitions.map((item) => {
         return (
-          <div className={styles.info}>
+          <div key={item} className={styles.info}>
             <ul>
-              <li><p>{item.definition}</p></li>
+              <li><em>{item.type}</em></li>
+              <li>{item.definition}</li>
               {item.example &&
               <li>
                 <strong>Example: &nbsp;</strong>
