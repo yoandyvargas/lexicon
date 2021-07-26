@@ -14,7 +14,7 @@ export default function Results({ word, pronunciation, definitions }) {
       <Anime {...animeProps}>
       <h2>{word}</h2>
       <h3>{pronunciation}</h3>
-      <hr></hr>
+      <div className={styles.divider}></div>
       {
         definitions && definitions.map((item) => {
         return (

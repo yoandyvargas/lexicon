@@ -11,7 +11,7 @@ export default function SuggestionsBlock({ fetchWordData }) {
 
   const suggestionsData = () => {
     for (let i = 0; i < 12; i++) {
-      updateArray.push(suggestWords[Math.floor(Math.random() * 71)])
+      updateArray.push(suggestWords[Math.floor(Math.random() * 70)])
     }
     setWordBlock(updateArray)
   }

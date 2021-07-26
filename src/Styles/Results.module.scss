@@ -11,9 +11,6 @@
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.5s ease-in-out;
-  hr {
-    width: 100%;
-  }
   h2,
   h3,
   li,
@@ -48,8 +45,21 @@
     max-height: 200px;
   }
   .results__info {
-    border-left: solid 4px var(--main-button-color);
+    border-left: solid 2px var(--main-button-color);
     padding-left: 20px;
+  }
+  .divider {
+    padding: 1rem 0;
+  }
+  .divider:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--main-text-color);
   }
 }
 

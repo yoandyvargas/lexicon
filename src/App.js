@@ -39,7 +39,7 @@ function App() {
       fetchWordData={fetchWordData}
       />
       <footer>
-        <p>Made by Andrew Hendricks 👨🏻‍💻</p>
+        <p>Made by Yoandy Vargas 👨🏻‍💻</p>
       </footer>
     </div>
   );
