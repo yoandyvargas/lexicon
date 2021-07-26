@@ -11,10 +11,10 @@ export default function Results({ word, pronunciation, definitions }) {
 
   return (
     <div className={styles.results}>
-      <Anime {...animeProps}>
+      <Anime key={Math.random()} {...animeProps}>
       <h2>{word}</h2>
       <h3>{pronunciation}</h3>
-      {definitions ? <div className={styles.divider}></div> : <></>}
+      {definitions ? <div className={styles.divider}></div> : null}
       {
         definitions && definitions.map((item) => {
         return (

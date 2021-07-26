@@ -6,8 +6,14 @@ export default function History ({ SearchedWords, fetchWordData }) {
   const [searchHistory, setHistory] = useState([]);
   const [isLoading, setLoading] = useState(true)
 
+  //adds recently searched items into a searchHistory state array
   useEffect(() => {
-    if(!searchHistory.includes(SearchedWords) && SearchedWords !== "lexicon" && SearchedWords !== undefined) {
+    //there has to be a better way to write chained if statements
+    if (!searchHistory.includes(SearchedWords) // adds words just once
+    && SearchedWords !== 'lexicon' // default fetched word
+    && SearchedWords !== undefined // 
+    && SearchedWords !== 'error') // words not found
+    {
       setHistory([...searchHistory, SearchedWords])
       setLoading(false)
     }

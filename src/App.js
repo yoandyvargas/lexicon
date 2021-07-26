@@ -15,13 +15,13 @@ function App() {
 
   const fetchWordData = value => {
     client.define(value)
-      .then((res) => setWord(res))
+      .then((res) => {console.log(res);setWord(res)})
       .then(setIsLoading(false))
       .catch(err => {
         console.log(err);
         setWord({
           word: `${value}`, 
-          pronunciation: 'Definition not found.'
+          pronunciation: 'Word not found.'
         })
       })
   }
@@ -42,7 +42,7 @@ function App() {
         fetchWordData={fetchWordData}
       />
       <History 
-      SearchedWords={currentWord.word}
+      SearchedWords={currentWord.pronunciation !== 'Word not found.' ? currentWord.word : 'error'}
       fetchWordData={fetchWordData}
       />
       <footer>

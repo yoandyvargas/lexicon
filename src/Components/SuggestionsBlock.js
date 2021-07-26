@@ -6,13 +6,19 @@ export default function SuggestionsBlock({ fetchWordData }) {
 
   const [wordBlock, setWordBlock] = useState([]);
 
+  //suggestions.json contains 133 keys with empty object values
   let suggestWords = Object.keys(suggestions)
-  let updateArray = []
 
+  //Creates a randomized array of 12 suggested words from suggestions.json
   const suggestionsData = () => {
-    for (let i = 0; i < 12; i++) {
-      updateArray.push(suggestWords[Math.floor(Math.random() * 133)])
+    let updateArray = [];
+    while (updateArray.length < 12) {
+      let index = Math.floor(Math.random() * 133);
+      if (!updateArray.includes(suggestWords[index])){
+        updateArray.push(suggestWords[index])
+      }
     }
+    //sets state to match the new randomized array
     setWordBlock(updateArray)
   }
 
@@ -36,9 +42,7 @@ export default function SuggestionsBlock({ fetchWordData }) {
       </div>
       <div className={styles.suggestions__grid}>
         <Anime {...animeProps}>
-          {
-            wordBlock.map((item, index) => <button key={item} onClick={() => fetchWordData(`${item}`)}>{item}</button>)
-          }
+          {wordBlock.map((item) => <button key={item} onClick={() => fetchWordData(`${item}`)}>{item}</button>)}
         </Anime>
       </div>
     </section>

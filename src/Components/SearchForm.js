@@ -13,11 +13,9 @@ export default function SearchForm({ fetchWordData }) {
     fetchWordData(value)
   }
 
-  let autocompleteOptions = Object.keys(hints)
-
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <Hint options={autocompleteOptions} allowTabFill='true'>
+      <Hint options={Object.keys(hints)} allowTabFill='true'>
         <input
           type='text'
           className='input'
