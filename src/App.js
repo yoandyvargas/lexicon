@@ -15,8 +15,15 @@ function App() {
 
   const fetchWordData = value => {
     client.define(value)
-      .then((res) => { setWord(res)})
-      .then(setIsLoading(false));
+      .then((res) => setWord(res))
+      .then(setIsLoading(false))
+      .catch(err => {
+        console.log(err);
+        setWord({
+          word: `${value}`, 
+          pronunciation: 'Definition not found.'
+        })
+      })
   }
 
   useEffect(() => {

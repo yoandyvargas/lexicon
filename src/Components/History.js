@@ -3,7 +3,7 @@ import styles from '../Styles/History.module.scss'
 
 export default function History ({ SearchedWords, fetchWordData }) {
 
-  const [searchHistory, setHistory] = useState([""]);
+  const [searchHistory, setHistory] = useState([]);
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
