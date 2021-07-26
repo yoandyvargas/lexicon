@@ -3,7 +3,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  margin: 1rem 0 4rem 0;
+  margin: 1rem 0;
+  height: 54px;
   top: 0;
   left: 0;
   p {
@@ -14,9 +15,6 @@
     cursor: pointer;
     word-break: break-all;
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  h2 {
-    margin-bottom: 1rem;
   }
   p:hover {
     opacity: 1;

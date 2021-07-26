@@ -8,7 +8,6 @@ export default function History ({ SearchedWords, fetchWordData }) {
 
   //adds recently searched items into a searchHistory state array
   useEffect(() => {
-    //there has to be a better way to write chained if statements
     if (!searchHistory.includes(SearchedWords) // adds words just once
     && SearchedWords !== 'lexicon' // default fetched word
     && SearchedWords !== undefined // 
@@ -21,6 +20,7 @@ export default function History ({ SearchedWords, fetchWordData }) {
   }, [SearchedWords])
 
   return (
+    <section>
     <div className={styles.history}>
       {(isLoading ? <h2>Search History</h2> : 
       (searchHistory.map((item, index) => {
@@ -28,5 +28,6 @@ export default function History ({ SearchedWords, fetchWordData }) {
       })
       ))}
     </div>
+    </section>
   )
 }

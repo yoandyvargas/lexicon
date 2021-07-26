@@ -6,7 +6,7 @@ export default function SuggestionsBlock({ fetchWordData }) {
 
   const [wordBlock, setWordBlock] = useState([]);
 
-  //suggestions.json contains 133 keys with empty object values
+  //suggestions.json contains 133 keys with empty objects as values
   let suggestWords = Object.keys(suggestions)
 
   //Creates a randomized array of 12 suggested words from suggestions.json
@@ -18,7 +18,6 @@ export default function SuggestionsBlock({ fetchWordData }) {
         updateArray.push(suggestWords[index])
       }
     }
-    //sets state to match the new randomized array
     setWordBlock(updateArray)
   }
 
@@ -34,7 +33,6 @@ export default function SuggestionsBlock({ fetchWordData }) {
   };
 
   return (
-    
     <section>
       <div className={styles.suggestions__info}>
         <h2>Suggested words</h2>
