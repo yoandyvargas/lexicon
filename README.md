@@ -42,7 +42,7 @@ npm start
 npm run build
 ```
 
-## API & Notable Depedencies 📦
+## API & Notable Packages 📦
 
 * Dictionary API – Owlbot Info (https://owlbot.info)
 > Register for a free token and add it to App.js `const client = Owlbot("YOUR_TOKEN");`
