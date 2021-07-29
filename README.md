@@ -1,8 +1,9 @@
 <div align="center">
   <h1>Lexicon 📖</h1>
   <p>A simple dictionary to learn some new words.</p>
+  <a href="http://lexicon-eng.netlify.app" target="_blank">Live Demo</a>
 </div>
-
+<br/>
 <div align="center">
   <a href="https://app.netlify.com/sites/lexicon-eng/deploys" target="_blank">
     <img src="https://api.netlify.com/api/v1/badges/99402089-cc2f-421d-b353-532714c73beb/deploy-status" alt="Netlify Status"/>
