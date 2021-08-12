@@ -15,7 +15,7 @@
 
 ## My Thoughts 💡
 
-I want to learn React and created this simple project to do so. I used only official documentation, Google, and avoided any video tutorials. I'm always looking to learn and improve – please feel free to raise PRs and/or provide any feedback you believe would help. At the very least, I hope you learn a new word or two. 😉  
+I wanted to work with React and created this simple project to learn the basics. I'm always looking to learn and improve – please feel free to raise PRs and/or provide any feedback you believe would help. At the very least, I hope you learn a new word or two. 😉  
 
 Thank you! 🙏🏻
 
