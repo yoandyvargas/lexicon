@@ -12,7 +12,7 @@ export default function SuggestionsBlock({ fetchWordData }) {
   const suggestionsData = () => {
     let updateArray = [];
     while (updateArray.length < 12) {
-      let index = Math.floor(Math.random() * 133);
+      let index = Math.floor(Math.random() * 132);
       if (!updateArray.includes(suggestWords[index])) {
         updateArray.push(suggestWords[index]);
       }
