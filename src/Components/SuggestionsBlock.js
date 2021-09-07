@@ -38,7 +38,7 @@ export default function SuggestionsBlock({ fetchWordData }) {
         <button onClick={suggestionsData}>Shuffle</button>
       </div>
       <div className={styles.suggestions__grid}>
-        <Anime {...animeProps}>
+        <Anime key={Math.random()} {...animeProps}>
           {wordBlock.map((item) => (
             <button key={item} onClick={() => fetchWordData(`${item}`)}>
               {item}

@@ -2,20 +2,21 @@ import { useState, useEffect } from "react";
 import styles from "../Styles/History.module.scss";
 
 export default function History({ SearchedWords, fetchWordData }) {
-  const [searchHistory, setHistory] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [searchHistory, setHistory] = useState(() => {
+    const localSearchHistory = localStorage.getItem("words");
+    return localSearchHistory ? JSON.parse(localSearchHistory) : [];
+  });
 
-  //adds recently searched items into a searchHistory state array
+  // Excludes unncessary items -> Updates state -> Adds to local storage -> Repeats every time a new word is fetched
   useEffect(() => {
     if (
-      !searchHistory.includes(SearchedWords) && // adds words just once
-      SearchedWords !== "lexicon" && // default fetched word
-      SearchedWords !== undefined && //
+      !searchHistory.includes(SearchedWords) &&
+      SearchedWords !== "lexicon" &&
+      SearchedWords !== undefined &&
       SearchedWords !== "error"
     ) {
-      // words not found
       setHistory([...searchHistory, SearchedWords]);
-      setLoading(false);
+      localStorage.setItem("words", JSON.stringify(searchHistory));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [SearchedWords]);
@@ -23,17 +24,14 @@ export default function History({ SearchedWords, fetchWordData }) {
   return (
     <section>
       <div className={styles.history}>
-        {isLoading ? (
-          <h2>Search History</h2>
-        ) : (
-          searchHistory.map((item, index) => {
-            return (
-              <p key={index} onClick={() => fetchWordData(`${item}`)}>
-                {item}
-              </p>
-            );
-          })
-        )}
+        <h2>Search History</h2>
+        {searchHistory.map((item, index) => {
+          return (
+            <p key={index} onClick={() => fetchWordData(`${item}`)}>
+              {item}
+            </p>
+          );
+        })}
       </div>
     </section>
   );
