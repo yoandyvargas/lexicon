@@ -18,9 +18,12 @@ export default function useLocalStorage(key, initialValue) {
   });
 
   //Each time the value changes, add that value to localStorage
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [value]);
+  useEffect(
+    (key) => {
+      localStorage.setItem(key, JSON.stringify(value));
+    },
+    [value]
+  );
 
   return [value, setValue];
 }
