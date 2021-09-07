@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "../Styles/History.module.scss";
+import useLocalStorage from "./useLocalStorage";
 
 export default function History({ SearchedWords, fetchWordData }) {
-  const [searchHistory, setHistory] = useState(() => {
-    const localSearchHistory = localStorage.getItem("words");
-    return localSearchHistory ? JSON.parse(localSearchHistory) : [];
-  });
+  const [searchHistory, setHistory] = useLocalStorage("words", []);
 
-  // Excludes unncessary items -> Updates state -> Adds to local storage -> Repeats every time a new word is fetched
   useEffect(() => {
     if (
       !searchHistory.includes(SearchedWords) &&
@@ -16,7 +13,6 @@ export default function History({ SearchedWords, fetchWordData }) {
       SearchedWords !== "error"
     ) {
       setHistory([...searchHistory, SearchedWords]);
-      localStorage.setItem("words", JSON.stringify(searchHistory));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [SearchedWords]);
